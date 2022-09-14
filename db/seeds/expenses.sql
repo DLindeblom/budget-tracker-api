@@ -21,3 +21,15 @@ INSERT INTO expenses
 INSERT INTO expenses
 (budget_id, description, date, amount) VALUES
 (1, 'mcdonalds', '14/09/2022', 20);
+
+INSERT INTO expenses
+(budget_id, description, date, amount) VALUES
+(2, 'walmart', '14/09/2022', 20);
+
+INSERT INTO expenses
+(budget_id, description, date, amount) VALUES
+(2, 'babyfood', '14/09/2022', 20);
+
+INSERT INTO expenses
+(budget_id, description, date, amount) VALUES
+(2, 'carters', '14/09/2022', 20);
