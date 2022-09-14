@@ -1,0 +1,8 @@
+DROP TABLE if EXISTS;
+
+CREATE TABLE users (
+
+  id SERIAL PRIMARY KEY NOT NULL,
+  email VARCHAR NOT NULL,
+  password VARCHAR
+);
