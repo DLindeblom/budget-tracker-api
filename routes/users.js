@@ -1,12 +1,14 @@
 const router = require('express').Router()
 
-const users = ['Bob', 'Alex', 'Will', 'Tristan',"jose"];
+// const users = ['Bob', 'Alex', 'Will', 'Tristan',"jose"];
 /* GET users listing. */
 
-module.exports = () => {
+module.exports = (db) => {
 
   router.get('/', function(req, res, next) {
-    res.json(users);
+    db.query('SELECT * FROM things').then(data => {
+      res.json(data.rows)
+    });
   });
 
   return router
