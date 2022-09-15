@@ -11,7 +11,7 @@ module.exports = (db) => {
     });
   });
 
-  router.post('/', (req, res) => { //add expense
+  router.post('/', async (req, res) => { //add expense
     const queryString = `
       INSERT INTO expenses
       (budget_id, description, date, amount)
@@ -19,9 +19,10 @@ module.exports = (db) => {
 
     const queryParams = [req.body.budgetId, req.body.description, req.body.date, req.body.amount]
 
-    db.query(queryString, queryParams).then(data => {
+    await db.query(queryString, queryParams).then((data) => {
       res.json(data)
     })
+    
   })
 
   return router
