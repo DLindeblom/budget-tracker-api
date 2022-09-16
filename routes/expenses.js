@@ -1,7 +1,5 @@
 const router = require('express').Router()
 
-// const users = ['Bob', 'Alex', 'Will', 'Tristan',"jose"];
-/* GET users listing. */
 
 module.exports = (db) => {
 
@@ -23,6 +21,18 @@ module.exports = (db) => {
       res.json(data)
     })
     
+  })
+
+  router.delete('/delete/:id', (req, res) => {
+    const queryString = `
+    DELETE FROM expenses
+    WHERE id = $1
+    `
+    const queryParams = [req.params.id]
+
+    db.query(queryString, queryParams).then(()=> {
+      res.send(req.params)
+    })
   })
 
   return router
